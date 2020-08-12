@@ -56,6 +56,12 @@ const launchVerification = () => {
 
 ;(async function () {
   try {
+    const result = await Promise.all([
+      startTransaction(),
+      initPayment(),
+      launchVerification(),
+    ])
+    console.log(result)
   } catch (err) {
     console.log(err)
   }
