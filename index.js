@@ -4,25 +4,58 @@
 // false - reject 'hero is on vacation'
 // true - resolve 'batman is here'
 
-function fourSecPromise() {
-  return new Promise((resolve, reject) => {
+// function fourSecPromise() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (randomBool) {
+//         resolve('batman is here')
+//       } else {
+//         reject('hero is on vacation')
+//       }
+//     }, 4000)
+//   })
+// }
+
+// const randomBool = Boolean(Math.round(Math.random()))
+
+// // returns either 0 or 1
+// ;(async function () {
+//   try {
+//     const result = await fourSecPromise()
+//     console.log(result)
+//   } catch (err) {
+//     console.log(err)
+//   }
+// })()
+
+// //////////////////////////////////////////////////////////////////////////////////////////
+
+//  FULLFILL ALL PROMISES CHALLENGE
+
+const startTransaction = () => {
+  return new Promise((res) => {
     setTimeout(() => {
-      if (randomBool) {
-        resolve('batman is here')
-      } else {
-        reject('hero is on vacation')
-      }
-    }, 4000)
+      res(true)
+    }, 3000)
+  })
+}
+const initPayment = () => {
+  return new Promise((res) => {
+    setTimeout(() => {
+      res(true)
+    }, 2000)
+  })
+}
+const launchVerification = () => {
+  return new Promise((res) => {
+    setTimeout(() => {
+      res(true)
+    }, 2000)
   })
 }
 
-const randomBool = Boolean(Math.round(Math.random()))
-
-// returns either 0 or 1
 ;(async function () {
   try {
-    const result = await fourSecPromise()
-    console.log(result)
   } catch (err) {
     console.log(err)
   }
