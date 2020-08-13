@@ -76,13 +76,13 @@
 
 // //////////////////////////////////////////////////////////////////////////////////////////
 
-//  FULLFILL THE FASTEST PROMISE CHALLENGE
+//  FULFIL THE FASTEST PROMISE CHALLENGE
 
 const taskA = () => {
   return new Promise((res) => {
     setTimeout(() => {
       res('a')
-    }, 100)
+    }, 4000)
   })
 }
 const taskB = () => {
@@ -102,6 +102,8 @@ const taskC = () => {
 
 ;(async function () {
   try {
+    const result = await Promise.race([taskA(), taskB(), taskC()])
+    console.log(result)
   } catch (err) {
     console.log(err)
   }
