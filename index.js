@@ -142,9 +142,24 @@ const taskSmiley = () => {
   })
 }
 
+// execute taskW append W to wow
+// execute taskW and taskO in parallel and append result to wow
+// execute taskExclaim and taskSmiley in race condition append result to wow
+// get either WOW! or WOW:) depending on the random value of taskExclaim timeout
+
 ;(async function () {
   try {
     let wow = ''
+    const resultW = await taskW()
+    wow += resultW
+
+    const resultOW = await Promise.all([taskO(), taskW()])
+    wow += resultOW[0] + resultOW[1]
+
+    const resultRace = await Promise.race([taskExclaim(), taskSmiley()])
+    wow += resultRace
+
+    console.log(wow)
   } catch (err) {
     console.log(err)
   }
