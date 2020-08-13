@@ -78,32 +78,73 @@
 
 //  FULFIL THE FASTEST PROMISE CHALLENGE
 
-const taskA = () => {
+// const taskA = () => {
+//   return new Promise((res) => {
+//     setTimeout(() => {
+//       res('a')
+//     }, 4000)
+//   })
+// }
+// const taskB = () => {
+//   return new Promise((res) => {
+//     setTimeout(() => {
+//       res('b')
+//     }, 2000)
+//   })
+// }
+// const taskC = () => {
+//   return new Promise((res) => {
+//     setTimeout(() => {
+//       res('c')
+//     }, 10000)
+//   })
+// }
+
+// ;(async function () {
+//   try {
+//     const result = await Promise.race([taskA(), taskB(), taskC()])
+//     console.log(result)
+//   } catch (err) {
+//     console.log(err)
+//   }
+// })()
+
+// //////////////////////////////////////////////////////////////////////////////////////////
+
+//  PARALLEL EXECUTION CHALLENGE
+
+const taskW = () => {
   return new Promise((res) => {
     setTimeout(() => {
-      res('a')
-    }, 4000)
+      res('W')
+    }, 1000)
   })
 }
-const taskB = () => {
+const taskO = () => {
   return new Promise((res) => {
     setTimeout(() => {
-      res('b')
-    }, 2000)
+      res('O')
+    }, 500)
   })
 }
-const taskC = () => {
+const taskExclaim = () => {
   return new Promise((res) => {
     setTimeout(() => {
-      res('c')
-    }, 10000)
+      res('!')
+    }, Math.floor(Math.random() * 1000))
+  })
+}
+const taskSmiley = () => {
+  return new Promise((res) => {
+    setTimeout(() => {
+      res(':)')
+    }, 300)
   })
 }
 
 ;(async function () {
   try {
-    const result = await Promise.race([taskA(), taskB(), taskC()])
-    console.log(result)
+    let wow = ''
   } catch (err) {
     console.log(err)
   }
