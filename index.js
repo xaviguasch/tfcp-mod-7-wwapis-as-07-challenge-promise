@@ -32,43 +32,76 @@
 
 //  FULLFILL ALL PROMISES CHALLENGE
 
-const startTransaction = () => {
+// const startTransaction = () => {
+//   return new Promise((res) => {
+//     setTimeout(() => {
+//       res(true)
+//     }, 5000)
+//   })
+// }
+// const initPayment = () => {
+//   return new Promise((res) => {
+//     setTimeout(() => {
+//       res(true)
+//     }, 1000)
+//   })
+// }
+// const launchVerification = () => {
+//   return new Promise((res) => {
+//     setTimeout(() => {
+//       res(true)
+//     }, 2000)
+//   })
+// }
+
+// const performance = async (label) => {
+//   const date = new Date()
+//   console.log(label, `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`)
+// }
+
+// ;(async function () {
+//   try {
+//     await performance('start')
+//     const result = await Promise.all([
+//       startTransaction(),
+//       initPayment(),
+//       launchVerification(),
+//     ])
+//     await performance('end')
+//     console.log(result)
+//   } catch (err) {
+//     console.log(err)
+//   }
+// })()
+
+// //////////////////////////////////////////////////////////////////////////////////////////
+
+//  FULLFILL THE FASTEST PROMISE CHALLENGE
+
+const taskA = () => {
   return new Promise((res) => {
     setTimeout(() => {
-      res(true)
-    }, 5000)
+      res('a')
+    }, 100)
   })
 }
-const initPayment = () => {
+const taskB = () => {
   return new Promise((res) => {
     setTimeout(() => {
-      res(true)
-    }, 1000)
-  })
-}
-const launchVerification = () => {
-  return new Promise((res) => {
-    setTimeout(() => {
-      res(true)
+      res('b')
     }, 2000)
   })
 }
-
-const performance = async (label) => {
-  const date = new Date()
-  console.log(label, `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`)
+const taskC = () => {
+  return new Promise((res) => {
+    setTimeout(() => {
+      res('c')
+    }, 10000)
+  })
 }
 
 ;(async function () {
   try {
-    await performance('start')
-    const result = await Promise.all([
-      startTransaction(),
-      initPayment(),
-      launchVerification(),
-    ])
-    await performance('end')
-    console.log(result)
   } catch (err) {
     console.log(err)
   }
